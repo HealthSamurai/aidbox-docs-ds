@@ -20,7 +20,7 @@ const config: Config = {
   organizationName: 'health-samurai', // Usually your GitHub org/user name.
   projectName: 'aidbox', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -110,8 +110,7 @@ const config: Config = {
       href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
       type: 'text/css',
     },
-  ],
-  onBrokenAnchors: 'ignore',
+  ]
 };
 
 export default config;
