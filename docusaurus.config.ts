@@ -74,6 +74,12 @@ const config: Config = {
           label: 'Documentation',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'caseStudiesSidebar',
+          position: 'left',
+          label: 'Case Studies',
+        },
+        {
           href: '/blog',
           position: 'left',
           label: 'Blog',

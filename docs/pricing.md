@@ -1,6 +1,6 @@
 ---
 title: Licensing & Pricing
-sidebar_position: 3
+sidebar_position: 10
 ---
 
 # Licensing & Pricing
