@@ -5,8 +5,11 @@ sidebar_position: 1
 
 # Architecture
 
+
 Aidbox is dynamic and highly configurable platform. It generates tables and API on fly based on configuration. It consists of JVM service, written in clojure and PostgreSQL database. Aidbox stores FHIR and Custom Resources in PostgreSQL
-as JSONB columns. 
+as JSONB columns.  Below is a key components of Aidbox:
+
+![Aidbox architecture](architecture.png)
 
 Aidbox has multiple validation engines, but currently recomended is [FHIR Schema](/overviews/fhir-schema) based validation, 
 which is designed to be fast and deeply compatible with FHIR.
