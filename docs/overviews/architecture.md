@@ -46,6 +46,6 @@ not all indexes are useful for all queries, but they can slow down insert/update
 ## FHIR Packages and StructureDefinition
 
 
+## Extensibility - Custom Operations and Resources
 
-## Custom Resources
 
