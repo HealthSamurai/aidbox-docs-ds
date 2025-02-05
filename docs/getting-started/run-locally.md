@@ -29,6 +29,50 @@ curl -JO https://aidbox.app/runme && docker compose up
 This command downloads the Aidbox script and starts Aidbox using Docker Compose.
 You can edit docker-compose.yaml file to configure ports and volumes.
 
+```yaml
+volumes:
+  aidbox_pg_data: {}
+services:
+  aidbox_db:
+    image: healthsamurai/aidboxdb:17
+    volumes:
+    - aidbox_pg_data:/var/lib/postgresql/data:delegated
+    environment:
+      POSTGRES_USER: aidbox
+      POSTGRES_PORT: '5432'
+      POSTGRES_DB: aidbox
+      POSTGRES_PASSWORD: <gen>
+  aidbox:
+    image: healthsamurai/aidboxone:edge
+    pull_policy: always
+    depends_on:
+    - aidbox_db
+    ports:
+    - 8080:8080
+    environment:
+      AIDBOX_TERMINOLOGY_SERVICE_BASE_URL: https://tx.fhir.org/r4
+      AIDBOX_FHIR_PACKAGES: hl7.fhir.r4.core#4.0.1
+      AIDBOX_FHIR_SCHEMA_VALIDATION: true
+      AIDBOX_CREATED_AT_URL: https://aidbox.app/ex/createdAt
+      AIDBOX_CLIENT_SECRET: <gen>
+      AIDBOX_CORRECT_AIDBOX_FORMAT: true
+      AIDBOX_ADMIN_PASSWORD: <gen>
+      AIDBOX_COMPLIANCE: enabled
+      AIDBOX_SECURITY_AUDIT__LOG_ENABLED: true
+      BOX_SEARCH_FHIR__COMPARISONS: true
+      PGHOST: aidbox_db
+      BOX_COMPATIBILITY_VALIDATION_JSON__SCHEMA_REGEX: '#{:fhir-datetime}'
+      BOX_SEARCH_AUTHORIZE_INLINE_REQUESTS: true
+      PGUSER: aidbox
+      AIDBOX_PORT: 8080
+      PGDATABASE: aidbox
+      PGPASSWORD: <gen>
+      PGPORT: '5432'
+      BOX_SEARCH_INCLUDE_CONFORMANT: true
+
+
+```
+
 ### 3. Access Aidbox
 
 Open in browser [http://localhost:8080/](http://localhost:8080)

@@ -1,0 +1,109 @@
+{
+  "properties": {
+    "resourceType": {
+      "type": "string",
+      "const": "Patient"
+    },
+    "id": {
+      "type": "string",
+      "description": "Logical id of this artifact"
+    },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether this patient's record is in active use"
+    },
+    "name": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": {
+            "type": "string",
+            "enum": ["usual", "official", "temp", "nickname", "anonymous", "old", "maiden"]
+          },
+          "family": {
+            "type": "string"
+          },
+          "given": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "telecom": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": {
+            "type": "string",
+            "enum": ["phone", "fax", "email", "pager", "url", "sms", "other"]
+          },
+          "value": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string",
+            "enum": ["home", "work", "temp", "old", "mobile"]
+          }
+        }
+      }
+    },
+    "gender": {
+      "type": "string",
+      "enum": ["male", "female", "other", "unknown"]
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "address": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": {
+            "type": "string",
+            "enum": ["home", "work", "temp", "old", "billing"]
+          },
+          "line": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": ["resourceType"]
+}

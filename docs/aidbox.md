@@ -11,6 +11,7 @@ Read more about [Aidbox Case Studies](https://www.health-samurai.io/case-studies
 Aidbox is free for development, but requires [flat-fee license](pricing.md)
 for production use.
 
+
 ## Key features
 
 Technically Aidbox is a [FHIR-native PostgreSQL](overviews/database.md)
@@ -32,7 +33,7 @@ Find more about [Aidbox Architecture](overviews/architecture.md).
   * [FHIR SDC & Aidbox Forms](modules/forms.md)
   * [Terminology Service](modules/terminology.md)
   * [SQL on FHIR](modules/sql-on-fhir.md)
-  * [CCDA/FHIR Converter](modules/cccd.md)
+  * [CCDA/FHIR Converter](modules/ccda.md)
   * [Master Patient Index](modules/mpi.md)
 
 
