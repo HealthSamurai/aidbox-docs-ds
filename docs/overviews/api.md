@@ -1,9 +1,8 @@
 ---
-title: API
 sidebar_position: 3
 ---
 
-# API
+# FHIR++ API
 
 Aidbox provides multiple APIs:
 

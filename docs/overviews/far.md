@@ -1,9 +1,8 @@
 ---
-title: FHIR Artifact Repo
 sidebar_position: 3
 ---
 
-# FHIR Artifact Repo
+# Artifact Repository
 
 This component is responsible for storing and serving FHIR artifacts, 
 managing FHIR packages and profiles.
