@@ -1,0 +1,3 @@
+[submodule "olddocs"]
+	path = olddocs
+	url = https://github.com/HealthSamurai/documentation
