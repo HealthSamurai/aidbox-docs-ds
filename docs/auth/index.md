@@ -54,12 +54,60 @@ How to authorize users and applications to access resources and operations?
 * Role Based Access Control - how to setup access control for different roles?
 * Attribute Based Access Control - how to setup access control for different attributes?
 * Access Policies based Access Control - how to setup access control using Access Policies?
-* Consent Based Access Control - how to setup access control for different consent types?
+* Security Labels Access Control - how to setup access control using Security Labels?
 * Organization based Access Control - how to setup access control for different organizations?
 * Patient API (SMART on FHIR) - how to setup access control for Patient API?
+* SMART scopes based Access Control - how to setup access control using SMART scopes?
 * Authorize by JWT?
+* Consent Based Access Control - how to setup access control for different consent types?
+
+### Role Based Access Control
+
+Aidbox does not have explicit concept of roles. But you can use Access Policies to achieve role-based access control.
+
+### Attribute Based Access Control
+
+There is no full support for attribute-based access control in Aidbox. But some elements of it can be implemented using Access Policies and/or Security Labels.
+
+### Access Policies
+
+Access Policies access control implemented on operations level. Every operation triggers access policies evaluation.
+
+There are different engines for Access Policies:
+
+* Allow - allow all requests, used for root access
+* Matcho - custom DSL for access control
+* JSON Schema - for simple policies
+* SQL engine - can access Aidbox database to make more complex decisions
+ 
+AccessPolicy can be linked to User, Application or specific Operation. In general, Access Policy is a function that accepts enriched request as JSON document and returns true or false.
+
+1. Aidbox collects all Access Policies that are linked to the operation, user or application.
+2. Aidbox evaluates all Access Policies.
+3. If one of Access Policies returns true, operation is allowed - else access is denied.
 
 
+:::warn
+
+Complex SQL policies can be slow down the API performance. Consider using Security Labels instead.
+
+:::
+
+* Best practice - use Access Policies for complex access control logic
+* Debugging Access Policies
+
+
+### Security Labels
+
+Security Labels are a way to control access to resources based on the resource's security labels.
+
+### Consent Based Access Control
+
+Consent Based Access Control is a way to control access to resources based on the patient's consent.
+
+
+
+### Questions
 * Access Control
   * How to setup Role Based Access Control? How to realize access only to patients of practitioner or organization?
   * How access control works in Aidbox?
