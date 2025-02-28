@@ -28,9 +28,23 @@ and data protection in your system.
 
 How to manage users and applications in Aidbox or integrate with external identity providers?
 
+Aidbox has built-in User & Application management system, but you can also integrate with external identity providers (like Google, Okta, etc).
+
+Aidbox implements SCIM protocol for user and application management.
+
 ## Authentication
 
-How to authenticate users and applications?
+How to authenticate users and applications? 
+
+Aidbox implements OAuth 2.0:
+
+* Basic authentication
+* OAuth 2.0
+* OpenID Connect
+* JWT based authentication
+* Federated authentication
+
+
 
 * Authentication & Identity & Access Management
   * How to manage users in Aidbox? How to block user?
