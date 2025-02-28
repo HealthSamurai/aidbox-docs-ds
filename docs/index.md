@@ -55,7 +55,8 @@ How to authorize users and applications to access resources and operations?
 * Attribute Based Access Control - how to setup access control for different attributes?
 * Access Policies based Access Control - how to setup access control using Access Policies?
 * Consent Based Access Control - how to setup access control for different consent types?
-
+* Organization based Access Control - how to setup access control for different organizations?
+* Patient API (SMART on FHIR) - how to setup access control for Patient API?
 * Authorize by JWT?
 
 
